@@ -19,7 +19,7 @@ const FEATURED = {
   name: "Stage Plotiphar",
   tagline: "plotiphar.com",
   description:
-    "A platform for planning and displaying live-event stage plots, mic boards, and assignment sheets — the flagship project this whole ecosystem of tools (Companion module, print templates, mic board devices) grew out of.",
+    "A platform for planning and displaying live-event stage plots, mic boards, and assignment sheets. This project has a small ecosystem of tools (Companion module, print templates, mic board devices) that grew out of it.",
   links: {
     website: "https://plotiphar.com",
   },
