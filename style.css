@@ -1,0 +1,333 @@
+/* ===================================================================
+   adhd.tristonyoder.com — "Blueprint" theme
+   Ported from stagePlotiphar's drafting-table design system.
+   Dark navy instrument surface, sky-blue / sunset-gold accents,
+   two-tier grid-paper background, flat hairline-bordered cards.
+   =================================================================== */
+
+:root {
+  --surface: #0d1018;
+  --surface-2: #141824;
+  --surface-3: #1a2030;
+  --border: #1c2336;
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  --accent: #498ed6;
+  --accent-light: #ffd557;
+  --accent-dim: #2d4d70;
+  --accent-bright: #6ba5e0;
+  --accent-pale: #a9cdf0;
+
+  --ink-100: #f4f6fb;
+  --ink-300: #b9c2d6;
+  --ink-500: #7c869e;
+
+  --font-sans: "Geist Sans", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", "SF Mono", ui-monospace, Menlo, monospace;
+
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink-100);
+  font-family: var(--font-sans);
+  background-color: var(--surface);
+  background-image:
+    radial-gradient(circle at center, transparent 20%, var(--surface) 90%),
+    linear-gradient(to right, color-mix(in srgb, var(--accent) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--accent) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to right, color-mix(in srgb, var(--accent) 3%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--accent) 3%, transparent) 1px, transparent 1px);
+  background-size: 100% 100%, 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- layout ---------- */
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+}
+
+header.site-header {
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin: 0 0 10px;
+}
+
+h1.site-title {
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.site-sub {
+  color: var(--ink-300);
+  font-size: 16px;
+  max-width: 640px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ---------- featured project ---------- */
+
+.featured {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 44px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--border-subtle);
+  position: relative;
+}
+
+.featured::before {
+  content: "featured";
+  position: absolute;
+  top: -11px;
+  left: 26px;
+  background: var(--surface);
+  border: 1px dashed var(--accent-light);
+  color: var(--accent-light);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.featured h2 {
+  margin: 6px 0 8px;
+  font-size: 22px;
+}
+
+.featured p {
+  margin: 0 0 16px;
+  color: var(--ink-300);
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* ---------- grid ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ---------- card ---------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--border-subtle);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-screenshot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.card-body {
+  padding: 20px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--surface-2);
+}
+
+.card-icon-fallback {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: var(--accent-dim);
+  color: var(--accent-pale);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.card-name {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.card-tagline {
+  margin: 0 0 12px;
+  color: var(--accent-pale);
+  font-size: 13px;
+  font-family: var(--font-mono);
+}
+
+.card-desc {
+  margin: 0 0 16px;
+  color: var(--ink-300);
+  font-size: 14px;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--ink-500);
+  background: var(--surface-2);
+}
+
+.tag.tag-fork {
+  border: 1px dashed var(--accent-light);
+  color: var(--accent-light);
+  background: transparent;
+}
+
+.tag.tag-private {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.05) 4px,
+    rgba(255, 255, 255, 0.05) 8px
+  );
+  color: var(--ink-500);
+}
+
+/* ---------- links ---------- */
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--ink-100);
+  background: var(--surface-2);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-bright);
+}
+
+.btn-primary {
+  border: 1px solid var(--accent-dim);
+  color: var(--accent-bright);
+}
+
+.btn-primary:hover {
+  border-color: var(--accent);
+  color: var(--accent-bright);
+}
+
+.btn-dashed-accent {
+  border: 1px dashed var(--accent-light);
+  color: var(--accent-light);
+  background: transparent;
+}
+
+.btn-dashed-accent:hover {
+  color: var(--accent-light);
+  border-color: var(--accent-light);
+  background: color-mix(in srgb, var(--accent-light) 8%, transparent);
+}
+
+/* ---------- footer ---------- */
+
+footer.site-footer {
+  margin-top: 72px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--ink-500);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+footer.site-footer a:hover {
+  color: var(--accent-bright);
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    padding: 44px 18px 72px;
+  }
+}
