@@ -103,6 +103,14 @@ const PROJECTS = [
     tags: ["templates"],
   },
   {
+    name: "13 Years",
+    tagline: "macOS + iOS app",
+    description:
+      "Runs a live show's stage timer system — a Producer app (control deck, live pager preview, PCO sync, network master) paired with a Pager app for on-stage countdown display.",
+    icon: "icons/13years.svg",
+    tags: ["macOS", "iOS", "private"],
+  },
+  {
     name: "Multi-Campus Stage Display",
     tagline: "macOS menu bar app",
     description:
