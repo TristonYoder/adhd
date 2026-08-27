@@ -53,6 +53,7 @@ const PROJECTS = [
     tagline: "macOS app",
     description:
       "Copies item notes, details, and columns between Planning Center Services plans across campuses.",
+    icon: "icons/copymachine.png", // source repo is releases-only/private, so this is a local copy
     links: {
       download: "https://github.com/TristonYoder/CopyMachine/releases/latest",
       repo: "https://github.com/TristonYoder/CopyMachine",
@@ -84,6 +85,7 @@ const PROJECTS = [
     tagline: "CLI tool",
     description:
       "Headless CLI for syncing music, playlists, podcasts, and ratings to an iPod — a Qt-free fork of iOpenPod, also packaged as a Nix flake (iopenpod-flake).",
+    icon: "https://raw.githubusercontent.com/TristonYoder/iOpenPodCLI/main/assets/icons/icon-256.png",
     links: {
       repo: "https://github.com/TristonYoder/iOpenPodCLI",
     },
@@ -105,6 +107,7 @@ const PROJECTS = [
     tagline: "macOS menu bar app",
     description:
       "Manages ProPresenter stage display content across multiple campuses — editable display slots served as RSS feeds, with automatic campus detection by IP.",
+    icon: "https://raw.githubusercontent.com/TristonYoder/multi-campus-stage-display/main/icon.png",
     links: {
       download:
         "https://github.com/TristonYoder/multi-campus-stage-display/releases/latest",
