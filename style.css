@@ -116,7 +116,7 @@ h1.site-title {
 }
 
 .featured .featured-screenshot-wrap {
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9;
   border-bottom: 1px solid var(--border);
 }
 
@@ -168,42 +168,44 @@ h1.site-title {
 .card-screenshot-wrap {
   position: relative;
   cursor: zoom-in;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
 }
 
 .card-screenshot {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  width: calc(100% - 24px);
+  margin: 12px;
+  aspect-ratio: 3 / 2;
   object-fit: contain; /* show the full screenshot, letterboxed, never cropped */
   display: block;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface-2);
+  border-radius: 8px;
 }
 
 .featured-screenshot-wrap .card-screenshot {
   aspect-ratio: inherit;
-  height: 100%;
+  height: calc(100% - 24px);
 }
 
 /* Two-layer crossfade: both images are stacked and absolutely positioned,
    so the incoming one fades in directly on top of the outgoing one instead
    of fading through the background in between. */
 .card-screenshot-wrap:has(.card-screenshot + .card-screenshot) {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
 }
 
 .featured-screenshot-wrap:has(.card-screenshot + .card-screenshot) {
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9;
 }
 
 .card-screenshot-wrap:has(.card-screenshot + .card-screenshot) .card-screenshot {
   position: absolute;
-  inset: 0;
-  height: 100%;
+  inset: 12px;
+  width: auto;
+  height: auto;
+  margin: 0;
   opacity: 0;
   transition: opacity 1s ease;
-  border-bottom: none;
 }
 
 .card-screenshot-wrap:has(.card-screenshot + .card-screenshot) .card-screenshot.layer-visible {
