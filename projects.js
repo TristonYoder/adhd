@@ -124,7 +124,7 @@ const PROJECTS = [
     tagline: "macOS + iOS app",
     description:
       "Runs a live show's stage timer system — a Producer app (control deck, live pager preview, PCO sync, network master) paired with a Pager app for on-stage countdown display.",
-    icon: "icons/13years.svg",
+    icon: "icons/13years.png", // actual brand mark, exported from the project's own asset
     tags: ["macOS", "iOS", "private"],
   },
   {
