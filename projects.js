@@ -53,6 +53,14 @@ const FEATURED_PROJECTS = [
     icon: "icons/13years.png", // actual brand mark, exported from the project's own asset
     description:
       "A purpose-built stage timer system for live production: a Producer app that runs the show — control deck, live pager preview, Planning Center sync, network master — paired with a dedicated Pager app that puts a clean, glanceable countdown in front of whoever's on stage.",
+    screenshots: [
+      { src: "screenshots/13-years/producer-pager.png", caption: "Producer — pager view" },
+      { src: "screenshots/13-years/producer-element-time.png", caption: "Producer — element timing" },
+      { src: "screenshots/13-years/producer-edit-time.png", caption: "Producer — edit time" },
+      { src: "screenshots/13-years/pager-standby.png", caption: "Pager — standby" },
+      { src: "screenshots/13-years/pager-go.png", caption: "Pager — go" },
+      { src: "screenshots/13-years/pager-clear.png", caption: "Pager — clear" },
+    ],
     tags: ["macOS", "iOS", "private"],
   },
 ];
