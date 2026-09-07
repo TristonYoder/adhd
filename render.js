@@ -198,6 +198,36 @@ function screenshotBlock(project) {
   return wrap;
 }
 
+// Shared icon + stacked name/tagline row, used by both the featured card
+// and grid cards. `big` swaps in the larger featured-size icon/heading.
+function buildHead(project, { big } = {}) {
+  const sizeClass = big ? " featured-icon" : "";
+  const head = el("div", `card-head${big ? " featured-head" : ""}`);
+
+  if (project.icon) {
+    const icon = el("img", `card-icon${sizeClass}`);
+    if (project.iconRounded) icon.classList.add("card-icon-rounded");
+    icon.src = project.icon;
+    icon.alt = "";
+    icon.loading = "lazy";
+    icon.onerror = () => {
+      icon.replaceWith(el("div", `card-icon-fallback${sizeClass}`, initials(project.name)));
+    };
+    head.appendChild(icon);
+  } else {
+    head.appendChild(el("div", `card-icon-fallback${sizeClass}`, initials(project.name)));
+  }
+
+  const titles = el("div", "card-titles");
+  titles.appendChild(el(big ? "h2" : "h3", big ? null : "card-name", project.name));
+  if (project.tagline) {
+    titles.appendChild(el("p", "card-tagline", project.tagline));
+  }
+  head.appendChild(titles);
+
+  return head;
+}
+
 function renderFeatured(project) {
   const mount = document.getElementById("featured");
   if (!mount || !project) return;
@@ -209,29 +239,7 @@ function renderFeatured(project) {
   }
 
   const body = el("div", "featured-body");
-
-  const head = el("div", "card-head featured-head");
-  if (project.icon) {
-    const icon = el("img", "card-icon featured-icon");
-    if (project.iconRounded) icon.classList.add("card-icon-rounded");
-    icon.src = project.icon;
-    icon.alt = "";
-    icon.loading = "lazy";
-    icon.onerror = () => {
-      icon.replaceWith(el("div", "card-icon-fallback featured-icon", initials(project.name)));
-    };
-    head.appendChild(icon);
-  } else {
-    head.appendChild(el("div", "card-icon-fallback featured-icon", initials(project.name)));
-  }
-
-  const titles = el("div", "featured-titles");
-  titles.appendChild(el("h2", null, project.name));
-  if (project.tagline) {
-    titles.appendChild(el("p", "card-tagline", project.tagline));
-  }
-  head.appendChild(titles);
-  body.appendChild(head);
+  body.appendChild(buildHead(project, { big: true }));
 
   body.insertAdjacentHTML(
     "beforeend",
@@ -251,27 +259,8 @@ function renderCard(project) {
   if (shots) card.appendChild(shots);
 
   const body = el("div", "card-body");
+  body.appendChild(buildHead(project));
 
-  const head = el("div", "card-head");
-  if (project.icon) {
-    const icon = el("img", "card-icon");
-    if (project.iconRounded) icon.classList.add("card-icon-rounded");
-    icon.src = project.icon;
-    icon.alt = "";
-    icon.loading = "lazy";
-    icon.onerror = () => {
-      icon.replaceWith(el("div", "card-icon-fallback", initials(project.name)));
-    };
-    head.appendChild(icon);
-  } else {
-    head.appendChild(el("div", "card-icon-fallback", initials(project.name)));
-  }
-  head.appendChild(el("h3", "card-name", project.name));
-  body.appendChild(head);
-
-  if (project.tagline) {
-    body.appendChild(el("p", "card-tagline", project.tagline));
-  }
   if (project.description) {
     body.appendChild(el("p", "card-desc", project.description));
   }

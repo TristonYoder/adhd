@@ -127,19 +127,9 @@ h1.site-title {
   font-size: 22px;
 }
 
-.featured-titles {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
 .featured h2 {
   margin: 0;
   font-size: 22px;
-}
-
-.featured .featured-titles .card-tagline {
-  margin: 0;
 }
 
 .featured p {
@@ -377,6 +367,13 @@ h1.site-title {
   font-size: 16px;
 }
 
+.card-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
 .card-name {
   margin: 0;
   font-size: 17px;
@@ -384,7 +381,7 @@ h1.site-title {
 }
 
 .card-tagline {
-  margin: 0 0 12px;
+  margin: 0;
   color: var(--accent-pale);
   font-size: 13px;
   font-family: var(--font-mono);
