@@ -328,20 +328,15 @@ h1.site-title {
 }
 
 .card-icon {
-  box-sizing: border-box;
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
+  width: 48px;
+  height: 48px;
   object-fit: contain; /* non-square icons keep their full shape, no cropping */
-  padding: 3px;
-  border: 1px solid var(--border);
   flex-shrink: 0;
-  background: var(--surface-2);
 }
 
 .card-icon-fallback {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 9px;
   border: 1px solid var(--border);
   background: var(--accent-dim);
@@ -352,7 +347,7 @@ h1.site-title {
   justify-content: center;
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .card-name {
