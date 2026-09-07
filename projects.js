@@ -6,6 +6,10 @@
  *   tagline     (optional) short mono-font line under the name
  *   description (optional) 1-3 sentence card body
  *   icon        (optional) path to a square icon image, e.g. "icons/foo.png"
+ *   iconRounded (optional) true -> adds slight corner rounding to `icon`.
+ *                 Use for icons with no transparency (a flat, edge-to-edge
+ *                 square image) — icons with their own transparent/rounded
+ *                 shape don't need it.
  *   screenshots (optional) array of screenshots for a click-to-enlarge gallery.
  *                 Each entry is either a path string, e.g. "screenshots/foo/1.png",
  *                 or { src, caption } to add a caption shown in the lightbox.
@@ -45,6 +49,7 @@ const PROJECTS = [
     tagline: "web tool",
     description: "Generates custom icon sets for Elgato Stream Deck buttons.",
     icon: "icons/sdicongenerator.png",
+    iconRounded: true,
     links: {
       website: "https://sdicons.tristonyoder.com/",
       repo: "https://github.com/TristonYoder/sdIconGenerator",
@@ -57,6 +62,7 @@ const PROJECTS = [
     description:
       "Converts a BPM into delay time, Hz, frame count, and sample count — for tempo-synced delays, strobes, and video effects.",
     icon: "icons/bpmcalc.png",
+    iconRounded: true,
     links: {
       website: "https://bpmcalc.tristonyoder.com/",
       repo: "https://github.com/TristonYoder/bpmCalc",
@@ -81,6 +87,7 @@ const PROJECTS = [
     description:
       "Automates scheduling recurring YouTube live broadcasts for multiple services, with dry-run mode and date-range batch scheduling.",
     icon: "icons/yt-schedule.png",
+    iconRounded: true,
     links: {
       repo: "https://github.com/TristonYoder/yt-schedule",
     },
@@ -114,6 +121,7 @@ const PROJECTS = [
     description:
       "Liquid HTML print templates for Planning Center Online — clean, role-specific run sheets (audio, media, lighting, service director) printed straight from PCO.",
     icon: "icons/pcoprintouts.png",
+    iconRounded: true,
     links: {
       repo: "https://github.com/TristonYoder/pcoPrintouts",
     },
@@ -133,6 +141,7 @@ const PROJECTS = [
     description:
       "Manages ProPresenter stage display content across multiple campuses — editable display slots served as RSS feeds, with automatic campus detection by IP.",
     icon: "https://raw.githubusercontent.com/TristonYoder/multi-campus-stage-display/main/icon.png",
+    iconRounded: true,
     links: {
       download:
         "https://github.com/TristonYoder/multi-campus-stage-display/releases/latest",

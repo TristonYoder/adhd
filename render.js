@@ -230,6 +230,7 @@ function renderCard(project) {
   const head = el("div", "card-head");
   if (project.icon) {
     const icon = el("img", "card-icon");
+    if (project.iconRounded) icon.classList.add("card-icon-rounded");
     icon.src = project.icon;
     icon.alt = "";
     icon.loading = "lazy";

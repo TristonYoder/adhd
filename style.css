@@ -334,6 +334,10 @@ h1.site-title {
   flex-shrink: 0;
 }
 
+.card-icon-rounded {
+  border-radius: 10px;
+}
+
 .card-icon-fallback {
   width: 48px;
   height: 48px;
