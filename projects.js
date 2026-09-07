@@ -105,6 +105,7 @@ const PROJECTS = [
     description: "Generates custom icon sets for Elgato Stream Deck buttons.",
     icon: "icons/sdicongenerator.png",
     iconRounded: true,
+    screenshots: ["screenshots/sdicongenerator/ui.png"],
     links: {
       website: "https://sdicons.tristonyoder.com/",
       repo: "https://github.com/TristonYoder/sdIconGenerator",
@@ -118,6 +119,7 @@ const PROJECTS = [
       "Converts a BPM into delay time, Hz, frame count, and sample count — for tempo-synced delays, strobes, and video effects.",
     icon: "icons/bpmcalc.png",
     iconRounded: true,
+    screenshots: ["screenshots/bpmcalc/ui.png"],
     links: {
       website: "https://bpmcalc.tristonyoder.com/",
       repo: "https://github.com/TristonYoder/bpmCalc",
