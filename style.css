@@ -173,12 +173,15 @@ h1.site-title {
 }
 
 .card-screenshot {
+  box-sizing: border-box;
   width: calc(100% - 24px);
   height: calc(100% - 24px);
   margin: 12px;
   object-fit: contain; /* show the full screenshot, letterboxed, never cropped */
   display: block;
   border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
 }
 
 /* Single-image case: no aspect-ratio on the img itself, the wrap sets it. */
