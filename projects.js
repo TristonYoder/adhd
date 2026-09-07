@@ -61,7 +61,7 @@ const FEATURED_PROJECTS = [
       { src: "screenshots/13-years/pager-go.png", caption: "Pager — go" },
       { src: "screenshots/13-years/pager-clear.png", caption: "Pager — clear" },
     ],
-    tags: ["macOS", "iOS", "private"],
+    tags: ["macOS", "iOS", "iPadOS", "tvOS", "StreamDeck", "Custom Hardware", "private"],
   },
 ];
 
