@@ -31,10 +31,10 @@
 const FEATURED_PROJECTS = [
   {
     name: "Stage Plotiphar",
-    tagline: "plotiphar.com",
+    tagline: "The app that's gonna have your running from bad stage plots.",
     icon: "icons/stage-plotiphar.png",
     description:
-      "The production platform behind every stage plot, mic board, and assignment sheet at the events I run — drag-and-drop plotting and live venue displays, with a whole hardware/software ecosystem (a Companion module, print templates, purpose-built signage devices) that's grown up around it.",
+      "The production platform behind every stage plot, mic board, and assignment sheet at the events I run — drag-and-drop plotting and live venue displays, with a whole hardware/software ecosystem (a Companion module, print templates, purpose-built signage devices) that have grown up around it.",
     screenshots: [
       { src: "screenshots/stage-plotiphar/stage-plot.png", caption: "Stage plot" },
       { src: "screenshots/stage-plotiphar/stage-plot-editor.png", caption: "Stage plot editor" },
