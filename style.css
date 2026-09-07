@@ -174,16 +174,20 @@ h1.site-title {
 
 .card-screenshot {
   width: calc(100% - 24px);
+  height: calc(100% - 24px);
   margin: 12px;
-  aspect-ratio: 3 / 2;
   object-fit: contain; /* show the full screenshot, letterboxed, never cropped */
   display: block;
   border-radius: 8px;
 }
 
-.featured-screenshot-wrap .card-screenshot {
-  aspect-ratio: inherit;
-  height: calc(100% - 24px);
+/* Single-image case: no aspect-ratio on the img itself, the wrap sets it. */
+.card-screenshot-wrap:not(:has(.card-screenshot + .card-screenshot)) {
+  aspect-ratio: 3 / 2;
+}
+
+.featured-screenshot-wrap:not(:has(.card-screenshot + .card-screenshot)) {
+  aspect-ratio: 16 / 9;
 }
 
 /* Two-layer crossfade: both images are stacked and absolutely positioned,
@@ -200,9 +204,10 @@ h1.site-title {
 
 .card-screenshot-wrap:has(.card-screenshot + .card-screenshot) .card-screenshot {
   position: absolute;
-  inset: 12px;
-  width: auto;
-  height: auto;
+  top: 12px;
+  left: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
   margin: 0;
   opacity: 0;
   transition: opacity 1s ease;
