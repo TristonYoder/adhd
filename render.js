@@ -209,13 +209,38 @@ function renderFeatured(project) {
   }
 
   const body = el("div", "featured-body");
-  body.innerHTML = `
-    <h2>${project.name}</h2>
-    ${project.tagline ? `<p class="card-tagline">${project.tagline}</p>` : ""}
-    ${project.description ? `<p>${project.description}</p>` : ""}
-    ${tagBadges(project)}
-    <div class="card-links">${linkButtons(project.links)}</div>
-  `;
+
+  const head = el("div", "card-head featured-head");
+  if (project.icon) {
+    const icon = el("img", "card-icon featured-icon");
+    if (project.iconRounded) icon.classList.add("card-icon-rounded");
+    icon.src = project.icon;
+    icon.alt = "";
+    icon.loading = "lazy";
+    icon.onerror = () => {
+      icon.replaceWith(el("div", "card-icon-fallback featured-icon", initials(project.name)));
+    };
+    head.appendChild(icon);
+  } else {
+    head.appendChild(el("div", "card-icon-fallback featured-icon", initials(project.name)));
+  }
+
+  const titles = el("div", "featured-titles");
+  titles.appendChild(el("h2", null, project.name));
+  if (project.tagline) {
+    titles.appendChild(el("p", "card-tagline", project.tagline));
+  }
+  head.appendChild(titles);
+  body.appendChild(head);
+
+  body.insertAdjacentHTML(
+    "beforeend",
+    `
+      ${project.description ? `<p>${project.description}</p>` : ""}
+      ${tagBadges(project)}
+      <div class="card-links">${linkButtons(project.links)}</div>
+    `
+  );
   mount.appendChild(body);
 }
 

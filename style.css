@@ -114,9 +114,32 @@ h1.site-title {
   border-bottom: 1px solid var(--border);
 }
 
-.featured h2 {
-  margin: 6px 0 8px;
+.featured-head {
+  margin-bottom: 16px;
+}
+
+.featured-icon {
+  width: 72px;
+  height: 72px;
+}
+
+.card-icon-fallback.featured-icon {
   font-size: 22px;
+}
+
+.featured-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.featured h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.featured .featured-titles .card-tagline {
+  margin: 0;
 }
 
 .featured p {
