@@ -6,12 +6,18 @@
  *   tagline     (optional) short mono-font line under the name
  *   description (optional) 1-3 sentence card body
  *   icon        (optional) path to a square icon image, e.g. "icons/foo.png"
- *   screenshot  (optional) path to a wide screenshot image, e.g. "screenshots/foo.png"
+ *   screenshots (optional) array of screenshots for a click-to-enlarge gallery.
+ *                 Each entry is either a path string, e.g. "screenshots/foo/1.png",
+ *                 or { src, caption } to add a caption shown in the lightbox.
+ *                 The first entry is used as the card's cover image; if there's
+ *                 more than one, a "⛶ N" badge appears and clicking opens a
+ *                 lightbox to browse them all. A single legacy `screenshot`
+ *                 string field also still works.
  *   tags        (optional) array of short strings, rendered as badges
  *   fork        (optional) true -> renders a dashed "fork" badge
  *   links       (optional) { website, repo, download } — any subset; omitted ones just don't render
  *
- * Nothing here is required except `name`. Missing icon/screenshot/links/tags
+ * Nothing here is required except `name`. Missing icon/screenshots/links/tags
  * all degrade gracefully — see render.js.
  */
 
@@ -20,6 +26,13 @@ const FEATURED = {
   tagline: "plotiphar.com",
   description:
     "A platform for planning and displaying live-event stage plots, mic boards, and assignment sheets. This project has a small ecosystem of tools (Companion module, print templates, mic board devices) that grew out of it.",
+  screenshots: [
+    { src: "screenshots/stage-plotiphar/stage-plot.png", caption: "Stage plot" },
+    { src: "screenshots/stage-plotiphar/stage-plot-editor.png", caption: "Stage plot editor" },
+    { src: "screenshots/stage-plotiphar/micboard.png", caption: "Mic board" },
+    { src: "screenshots/stage-plotiphar/event-view.png", caption: "Event view" },
+    { src: "screenshots/stage-plotiphar/hardware-assignments.png", caption: "Hardware assignments" },
+  ],
   links: {
     website: "https://plotiphar.com",
   },
