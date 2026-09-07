@@ -335,7 +335,7 @@ h1.site-title {
 
 .card-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* keep title top-aligned with the icon, even when it wraps to 2+ lines */
   gap: 12px;
   margin-bottom: 12px;
 }
