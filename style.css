@@ -158,6 +158,7 @@ h1.site-title {
   display: block;
   border-bottom: 1px solid var(--border);
   background: var(--surface-2);
+  transition: opacity 1s ease;
 }
 
 .featured-screenshot-wrap .card-screenshot {

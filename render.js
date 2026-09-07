@@ -160,16 +160,20 @@ function screenshotBlock(project) {
     const badge = el("span", "screenshot-count-badge", `⛶ ${shots.length}`);
     wrap.appendChild(badge);
 
-    // Auto-cycle the cover image through the gallery; pause on hover.
+    // Auto-cycle the cover image through the gallery, crossfading; pause on hover.
     const advance = () => {
-      cursor = (cursor + 1) % shots.length;
-      img.src = shots[cursor].src;
-      img.alt = shots[cursor].caption || `${project.name} screenshot`;
+      img.style.opacity = 0;
+      setTimeout(() => {
+        cursor = (cursor + 1) % shots.length;
+        img.src = shots[cursor].src;
+        img.alt = shots[cursor].caption || `${project.name} screenshot`;
+        img.style.opacity = 1;
+      }, 1000);
     };
-    let timer = setInterval(advance, 3000);
+    let timer = setInterval(advance, 5000);
     wrap.addEventListener("mouseenter", () => clearInterval(timer));
     wrap.addEventListener("mouseleave", () => {
-      timer = setInterval(advance, 3000);
+      timer = setInterval(advance, 5000);
     });
   }
 
