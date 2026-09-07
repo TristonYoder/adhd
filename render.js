@@ -228,14 +228,13 @@ function buildHead(project, { big } = {}) {
   return head;
 }
 
-function renderFeatured(project) {
-  const mount = document.getElementById("featured");
-  if (!mount || !project) return;
+function buildFeatured(project) {
+  const section = el("section", "featured");
 
   const shots = screenshotBlock(project);
   if (shots) {
     shots.classList.add("featured-screenshot-wrap");
-    mount.appendChild(shots);
+    section.appendChild(shots);
   }
 
   const body = el("div", "featured-body");
@@ -249,7 +248,14 @@ function renderFeatured(project) {
       <div class="card-links">${linkButtons(project.links)}</div>
     `
   );
-  mount.appendChild(body);
+  section.appendChild(body);
+  return section;
+}
+
+function renderFeaturedList(projects) {
+  const mount = document.getElementById("featured-list");
+  if (!mount || !projects || !projects.length) return;
+  projects.forEach((p) => mount.appendChild(buildFeatured(p)));
 }
 
 function renderCard(project) {
@@ -282,6 +288,6 @@ function renderGrid(projects) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof FEATURED !== "undefined") renderFeatured(FEATURED);
+  if (typeof FEATURED_PROJECTS !== "undefined") renderFeaturedList(FEATURED_PROJECTS);
   if (typeof PROJECTS !== "undefined") renderGrid(PROJECTS);
 });
