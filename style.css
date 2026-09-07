@@ -437,6 +437,13 @@ h1.site-title {
   color: var(--ink-500);
 }
 
+.tag.tag-canary {
+  border: 1px solid var(--accent-light);
+  background: var(--accent-light);
+  color: #1a1400;
+  font-weight: 600;
+}
+
 /* ---------- links ---------- */
 
 .card-links {

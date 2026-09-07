@@ -45,7 +45,7 @@ const FEATURED_PROJECTS = [
     links: {
       website: "https://plotiphar.com",
     },
-    tags: ["Web", "Docker", "Nix", "MacOS", "iOS", "TypeScript"],
+    tags: ["Web", "Docker", "Nix", "MacOS", "iOS", "TypeScript", "Beta"],
   },
   {
     name: "13 Years",
@@ -61,7 +61,7 @@ const FEATURED_PROJECTS = [
       { src: "screenshots/13-years/pager-go.png", caption: "Pager — go" },
       { src: "screenshots/13-years/pager-clear.png", caption: "Pager — clear" },
     ],
-    tags: ["macOS", "iOS", "iPadOS", "tvOS", "StreamDeck", "Custom Hardware", "private"],
+    tags: ["macOS", "iOS", "iPadOS", "tvOS", "StreamDeck", "Custom Hardware", "Canary"],
   },
 ];
 

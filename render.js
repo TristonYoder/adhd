@@ -55,7 +55,9 @@ function tagBadges(project) {
     badges.push(`<span class="tag tag-fork">fork</span>`);
   }
   (project.tags || []).forEach((t) => {
-    const cls = t.toLowerCase() === "private" ? "tag tag-private" : "tag";
+    const lower = t.toLowerCase();
+    const cls =
+      lower === "private" ? "tag tag-private" : lower === "canary" ? "tag tag-canary" : "tag";
     badges.push(`<span class="${cls}">${t}</span>`);
   });
   return badges.length
