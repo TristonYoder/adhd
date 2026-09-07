@@ -46,7 +46,7 @@ const FEATURED = {
 
 const PROJECTS = [
   {
-    name: "sdIconGenerator",
+    name: "Stream Deck Icon Generator",
     tagline: "web tool",
     description: "Generates custom icon sets for Elgato Stream Deck buttons.",
     icon: "icons/sdicongenerator.png",
@@ -58,7 +58,7 @@ const PROJECTS = [
     tags: ["web"],
   },
   {
-    name: "bpmCalc",
+    name: "BPM Calculator",
     tagline: "web tool",
     description:
       "Converts a BPM into delay time, Hz, frame count, and sample count — for tempo-synced delays, strobes, and video effects.",
@@ -71,7 +71,7 @@ const PROJECTS = [
     tags: ["web"],
   },
   {
-    name: "CopyMachine",
+    name: "PCO Copy Machine",
     tagline: "macOS app",
     description:
       "Copies item notes, details, and columns between Planning Center Services plans across campuses.",
@@ -83,7 +83,7 @@ const PROJECTS = [
     tags: ["macOS"],
   },
   {
-    name: "yt-schedule",
+    name: "YouTube Scheduler",
     tagline: "CLI tool",
     description:
       "Automates scheduling recurring YouTube live broadcasts for multiple services, with dry-run mode and date-range batch scheduling.",
@@ -95,7 +95,7 @@ const PROJECTS = [
     tags: ["CLI", "Python"],
   },
   {
-    name: "companion-module-stageplotiphar",
+    name: "Stage Plotiphar Companion Module",
     tagline: "Bitfocus Companion module",
     description:
       "Controls and monitors Stage Plotiphar venues from a Stream Deck / Companion setup — switch screens between events and micboards, and expose live stage-position → person assignments as Companion variables.",
@@ -105,7 +105,7 @@ const PROJECTS = [
     tags: ["Companion module"],
   },
   {
-    name: "iOpenPodCLI",
+    name: "iOpenPod CLI",
     tagline: "CLI tool",
     description:
       "Headless CLI for syncing music, playlists, podcasts, and ratings to an iPod — a Qt-free fork of iOpenPod, also packaged as a Nix flake (iopenpod-flake).",
@@ -117,7 +117,7 @@ const PROJECTS = [
     fork: true,
   },
   {
-    name: "pcoPrintouts",
+    name: "PCO Print Templates",
     tagline: "print templates",
     description:
       "Liquid HTML print templates for Planning Center Online — clean, role-specific run sheets (audio, media, lighting, service director) printed straight from PCO.",
