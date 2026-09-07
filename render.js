@@ -154,12 +154,26 @@ function screenshotBlock(project) {
   img.onerror = () => wrap.remove();
   wrap.appendChild(img);
 
+  let cursor = 0;
+
   if (shots.length > 1) {
     const badge = el("span", "screenshot-count-badge", `⛶ ${shots.length}`);
     wrap.appendChild(badge);
+
+    // Auto-cycle the cover image through the gallery; pause on hover.
+    const advance = () => {
+      cursor = (cursor + 1) % shots.length;
+      img.src = shots[cursor].src;
+      img.alt = shots[cursor].caption || `${project.name} screenshot`;
+    };
+    let timer = setInterval(advance, 3000);
+    wrap.addEventListener("mouseenter", () => clearInterval(timer));
+    wrap.addEventListener("mouseleave", () => {
+      timer = setInterval(advance, 3000);
+    });
   }
 
-  wrap.addEventListener("click", () => Lightbox.open(shots, 0));
+  wrap.addEventListener("click", () => Lightbox.open(shots, cursor));
   return wrap;
 }
 

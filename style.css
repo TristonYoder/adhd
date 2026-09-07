@@ -105,23 +105,6 @@ h1.site-title {
   overflow: hidden;
 }
 
-.featured::before {
-  content: "featured";
-  position: absolute;
-  top: -11px;
-  left: 26px;
-  z-index: 1;
-  background: var(--surface);
-  border: 1px dashed var(--accent-light);
-  color: var(--accent-light);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 999px;
-}
-
 .featured-body {
   padding: 28px 30px;
 }
