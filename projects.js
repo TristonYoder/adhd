@@ -44,6 +44,7 @@ const PROJECTS = [
     name: "sdIconGenerator",
     tagline: "web tool",
     description: "Generates custom icon sets for Elgato Stream Deck buttons.",
+    icon: "icons/sdicongenerator.png",
     links: {
       website: "https://sdicons.tristonyoder.com/",
       repo: "https://github.com/TristonYoder/sdIconGenerator",
@@ -55,6 +56,7 @@ const PROJECTS = [
     tagline: "web tool",
     description:
       "Converts a BPM into delay time, Hz, frame count, and sample count — for tempo-synced delays, strobes, and video effects.",
+    icon: "icons/bpmcalc.png",
     links: {
       website: "https://bpmcalc.tristonyoder.com/",
       repo: "https://github.com/TristonYoder/bpmCalc",
@@ -78,6 +80,7 @@ const PROJECTS = [
     tagline: "CLI tool",
     description:
       "Automates scheduling recurring YouTube live broadcasts for multiple services, with dry-run mode and date-range batch scheduling.",
+    icon: "icons/yt-schedule.png",
     links: {
       repo: "https://github.com/TristonYoder/yt-schedule",
     },
@@ -110,6 +113,7 @@ const PROJECTS = [
     tagline: "print templates",
     description:
       "Liquid HTML print templates for Planning Center Online — clean, role-specific run sheets (audio, media, lighting, service director) printed straight from PCO.",
+    icon: "icons/pcoprintouts.png",
     links: {
       repo: "https://github.com/TristonYoder/pcoPrintouts",
     },
