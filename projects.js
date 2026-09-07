@@ -72,6 +72,13 @@ const PROJECTS = [
     description:
       "Copies item notes, details, and columns between Planning Center Services plans across campuses.",
     icon: "icons/copymachine.png", // source repo is releases-only/private, so this is a local copy
+    screenshots: [
+      { src: "screenshots/pco-copy-machine/1-login.png", caption: "Login" },
+      { src: "screenshots/pco-copy-machine/2-item-matching.png", caption: "Item matching" },
+      { src: "screenshots/pco-copy-machine/3-note-matching.png", caption: "Note matching" },
+      { src: "screenshots/pco-copy-machine/4-select-notes.png", caption: "Select notes" },
+      { src: "screenshots/pco-copy-machine/5-apply-changes.png", caption: "Apply changes" },
+    ],
     links: {
       download: "https://github.com/TristonYoder/CopyMachine/releases/latest",
       repo: "https://github.com/TristonYoder/CopyMachine",
