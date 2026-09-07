@@ -158,12 +158,37 @@ h1.site-title {
   display: block;
   border-bottom: 1px solid var(--border);
   background: var(--surface-2);
-  transition: opacity 1s ease;
 }
 
 .featured-screenshot-wrap .card-screenshot {
   aspect-ratio: inherit;
   height: 100%;
+}
+
+/* Two-layer crossfade: both images are stacked and absolutely positioned,
+   so the incoming one fades in directly on top of the outgoing one instead
+   of fading through the background in between. */
+.card-screenshot-wrap:has(.card-screenshot + .card-screenshot) {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-screenshot-wrap:has(.card-screenshot + .card-screenshot) {
+  aspect-ratio: 21 / 9;
+}
+
+.card-screenshot-wrap:has(.card-screenshot + .card-screenshot) .card-screenshot {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  border-bottom: none;
+}
+
+.card-screenshot-wrap:has(.card-screenshot + .card-screenshot) .card-screenshot.layer-visible {
+  opacity: 1;
 }
 
 .screenshot-count-badge {

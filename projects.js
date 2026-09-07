@@ -36,7 +36,7 @@ const FEATURED = {
   links: {
     website: "https://plotiphar.com",
   },
-  tags: ["private"],
+  tags: ["Web", "Docker", "Nix", "MacOS", "iOS", "TypeScript"],
 };
 
 const PROJECTS = [

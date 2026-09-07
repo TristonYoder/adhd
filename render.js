@@ -147,29 +147,46 @@ function screenshotBlock(project) {
   if (!shots.length) return null;
 
   const wrap = el("div", "card-screenshot-wrap");
-  const img = el("img", "card-screenshot");
-  img.src = shots[0].src;
-  img.alt = shots[0].caption || `${project.name} screenshot`;
-  img.loading = "lazy";
-  img.onerror = () => wrap.remove();
-  wrap.appendChild(img);
-
   let cursor = 0;
 
-  if (shots.length > 1) {
+  if (shots.length === 1) {
+    const img = el("img", "card-screenshot");
+    img.src = shots[0].src;
+    img.alt = shots[0].caption || `${project.name} screenshot`;
+    img.loading = "lazy";
+    img.onerror = () => wrap.remove();
+    wrap.appendChild(img);
+  } else {
+    // Two stacked layers crossfade directly into each other (the incoming
+    // image fades in on top of the outgoing one) instead of fading to the
+    // background in between.
+    const layerA = el("img", "card-screenshot layer-visible");
+    const layerB = el("img", "card-screenshot");
+    layerA.src = shots[0].src;
+    layerA.alt = shots[0].caption || `${project.name} screenshot`;
+    layerA.loading = "lazy";
+    layerA.onerror = () => wrap.remove();
+    wrap.appendChild(layerA);
+    wrap.appendChild(layerB);
+
     const badge = el("span", "screenshot-count-badge", `⛶ ${shots.length}`);
     wrap.appendChild(badge);
 
-    // Auto-cycle the cover image through the gallery, crossfading; pause on hover.
+    let front = layerA;
+    let back = layerB;
+
     const advance = () => {
-      img.style.opacity = 0;
-      setTimeout(() => {
-        cursor = (cursor + 1) % shots.length;
-        img.src = shots[cursor].src;
-        img.alt = shots[cursor].caption || `${project.name} screenshot`;
-        img.style.opacity = 1;
-      }, 1000);
+      cursor = (cursor + 1) % shots.length;
+      const shot = shots[cursor];
+      back.onload = () => {
+        back.classList.add("layer-visible");
+        front.classList.remove("layer-visible");
+        [front, back] = [back, front];
+      };
+      back.alt = shot.caption || `${project.name} screenshot`;
+      back.src = shot.src;
     };
+
     let timer = setInterval(advance, 5000);
     wrap.addEventListener("mouseenter", () => clearInterval(timer));
     wrap.addEventListener("mouseleave", () => {
