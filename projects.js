@@ -172,4 +172,15 @@ const PROJECTS = [
     },
     tags: ["templates"],
   },
+  {
+    name: "60XT",
+    tagline: "personal dashboard",
+    description:
+      "A dashboard for a personal 60-day body-transformation challenge — pulls biometrics from Apple Health and tracks training and nutrition targets against a daily journal.",
+    links: {
+      website: "https://60xt.tristonyoder.com/",
+      repo: "https://github.com/TristonYoder/60XT",
+    },
+    tags: ["web"],
+  },
 ];
