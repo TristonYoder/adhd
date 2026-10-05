@@ -63,12 +63,11 @@ const FEATURED_PROJECTS = [
     ],
     tags: ["macOS", "iOS", "iPadOS", "tvOS", "StreamDeck", "Custom Hardware", "Canary"],
   },
-];
-
-const PROJECTS = [
   {
     name: "Puddle Jumper",
     tagline: "macOS + iPadOS + iOS app",
+    icon: "icons/puddle-jumper.png", // the shipped mark, from the app's own design/final set
+    iconRounded: true,
     description:
       "An SSH client and terminal emulator built from one shared SwiftUI source tree across macOS, iPadOS, and iOS — SwiftTerm for terminal emulation, Citadel for SSH transport. Hosts live in a Finder-style browser where each machine shows its own OS or distro mark, detected on connect, and sit in folders that pass user, port, key, and theme down to everything filed under them. Hosts and credentials sync across devices over CloudKit, with the secrets themselves in the keychain behind Face ID / Touch ID.",
     screenshots: [
@@ -84,6 +83,9 @@ const PROJECTS = [
     },
     tags: ["macOS", "iOS", "iPadOS", "SwiftUI", "CloudKit", "Beta"],
   },
+];
+
+const PROJECTS = [
   {
     name: "PCO Copy Machine",
     tagline: "macOS app",
