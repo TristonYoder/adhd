@@ -66,7 +66,7 @@ const FEATURED_PROJECTS = [
   {
     name: "Puddle Jumper",
     tagline:
-      "macOS + iPadOS + iOS app that syncs SSH hosts and credentials via iCloud",
+      "macOS + iPadOS + iOS app that syncs SSH hosts and credentials via iCloud Keychain",
     icon: "icons/puddle-jumper.png", // the shipped mark, from the app's own design/final set
     iconRounded: true,
     description:
