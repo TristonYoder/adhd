@@ -82,6 +82,9 @@ const FEATURED_PROJECTS = [
       { src: "screenshots/13-years/pager-go.png", caption: "Pager — go" },
       { src: "screenshots/13-years/pager-clear.png", caption: "Pager — clear" },
     ],
+    links: {
+      repo: "https://github.com/TristonYoder/13years",
+    },
     tags: ["macOS", "iOS", "iPadOS", "tvOS", "StreamDeck", "Custom Hardware", "Canary"],
   },
 ];
