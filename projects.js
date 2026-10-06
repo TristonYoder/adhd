@@ -30,6 +30,27 @@
 
 const FEATURED_PROJECTS = [
   {
+    name: "Puddle Jumper",
+    tagline:
+      "macOS + iPadOS + iOS app that syncs SSH hosts and credentials via iCloud Keychain",
+    icon: "icons/puddle-jumper.png", // the shipped mark, from the app's own design/final set
+    iconRounded: true,
+    description:
+      "An SSH client and terminal emulator built from one shared SwiftUI source tree across macOS, iPadOS, and iOS — SwiftTerm for terminal emulation, Citadel for SSH transport. Hosts live in a Finder-style browser where each machine shows its own OS or distro mark, detected on connect, and sit in folders that pass user, port, key, and theme down to everything filed under them. Hosts and credentials sync across devices over CloudKit, with the secrets themselves in the keychain behind Face ID / Touch ID.",
+    screenshots: [
+      { src: "screenshots/puddle-jumper/hosts-dark.png", caption: "Host browser" },
+      { src: "screenshots/puddle-jumper/hosts-light.png", caption: "Hosts and folders" },
+      { src: "screenshots/puddle-jumper/new-host.png", caption: "New host" },
+      { src: "screenshots/puddle-jumper/session.png", caption: "Session" },
+      { src: "screenshots/puddle-jumper/session-tabs.png", caption: "Several sessions on one host" },
+      { src: "screenshots/puddle-jumper/cmatrix.png", caption: "Running cmatrix" },
+    ],
+    links: {
+      website: "https://puddle.7co.dev",
+    },
+    tags: ["macOS", "iOS", "iPadOS", "SwiftUI", "CloudKit", "Beta"],
+  },
+  {
     name: "Stage Plotiphar",
     tagline: "The app that's gonna have your running from bad stage plots.",
     icon: "icons/stage-plotiphar.png",
@@ -62,27 +83,6 @@ const FEATURED_PROJECTS = [
       { src: "screenshots/13-years/pager-clear.png", caption: "Pager — clear" },
     ],
     tags: ["macOS", "iOS", "iPadOS", "tvOS", "StreamDeck", "Custom Hardware", "Canary"],
-  },
-  {
-    name: "Puddle Jumper",
-    tagline:
-      "macOS + iPadOS + iOS app that syncs SSH hosts and credentials via iCloud Keychain",
-    icon: "icons/puddle-jumper.png", // the shipped mark, from the app's own design/final set
-    iconRounded: true,
-    description:
-      "An SSH client and terminal emulator built from one shared SwiftUI source tree across macOS, iPadOS, and iOS — SwiftTerm for terminal emulation, Citadel for SSH transport. Hosts live in a Finder-style browser where each machine shows its own OS or distro mark, detected on connect, and sit in folders that pass user, port, key, and theme down to everything filed under them. Hosts and credentials sync across devices over CloudKit, with the secrets themselves in the keychain behind Face ID / Touch ID.",
-    screenshots: [
-      { src: "screenshots/puddle-jumper/hosts-dark.png", caption: "Host browser" },
-      { src: "screenshots/puddle-jumper/hosts-light.png", caption: "Hosts and folders" },
-      { src: "screenshots/puddle-jumper/new-host.png", caption: "New host" },
-      { src: "screenshots/puddle-jumper/session.png", caption: "Session" },
-      { src: "screenshots/puddle-jumper/session-tabs.png", caption: "Several sessions on one host" },
-      { src: "screenshots/puddle-jumper/cmatrix.png", caption: "Running cmatrix" },
-    ],
-    links: {
-      website: "https://puddle.7co.dev",
-    },
-    tags: ["macOS", "iOS", "iPadOS", "SwiftUI", "CloudKit", "Beta"],
   },
 ];
 
