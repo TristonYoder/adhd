@@ -84,6 +84,7 @@ const FEATURED_PROJECTS = [
     ],
     links: {
       repo: "https://github.com/TristonYoder/13years",
+      download: "https://github.com/TristonYoder/13years/releases/latest",
     },
     tags: ["macOS", "iOS", "iPadOS", "tvOS", "StreamDeck", "Custom Hardware", "Canary"],
   },
