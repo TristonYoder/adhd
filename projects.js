@@ -77,9 +77,13 @@ const FEATURED_PROJECTS = [
     description:
       "A purpose-built stage timer system for live production: a Producer app that runs the show — control deck, live pager preview, Planning Center sync, network master — paired with a dedicated Pager app that puts a clean, glanceable countdown in front of whoever's on stage.",
     screenshots: [
-      { src: "screenshots/13-years/producer-pager.png", caption: "Producer — pager view" },
-      { src: "screenshots/13-years/producer-element-time.png", caption: "Producer — element timing" },
-      { src: "screenshots/13-years/producer-edit-time.png", caption: "Producer — edit time" },
+      { src: "screenshots/13-years/run-sheet-table.png", caption: "Run sheet — table view" },
+      { src: "screenshots/13-years/run-sheet-list.png", caption: "Run sheet — list view" },
+      { src: "screenshots/13-years/run-sheet-now-next.png", caption: "Run sheet — now & next" },
+      { src: "screenshots/13-years/run-sheet-item-editor.png", caption: "Run sheet — item editor" },
+      { src: "screenshots/13-years/pagers-preview.png", caption: "Pagers — live preview" },
+      { src: "screenshots/13-years/messages.png", caption: "Messages — role thread" },
+      { src: "screenshots/13-years/flash-a-pager.png", caption: "Flashing a pager's firmware" },
       { src: "screenshots/13-years/pager-standby.png", caption: "Pager — standby" },
       { src: "screenshots/13-years/pager-go.png", caption: "Pager — go" },
       { src: "screenshots/13-years/pager-clear.png", caption: "Pager — clear" },
