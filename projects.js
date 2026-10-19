@@ -65,6 +65,8 @@ const FEATURED_PROJECTS = [
     ],
     links: {
       website: "https://plotiphar.com",
+      repo: "https://github.com/TristonYoder/stagePlotipharMac",
+      download: "https://github.com/TristonYoder/stagePlotipharMac/releases/latest",
     },
     tags: ["Web", "Docker", "Nix", "MacOS", "iOS", "TypeScript", "Beta"],
   },
